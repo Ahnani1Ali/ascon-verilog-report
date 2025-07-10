@@ -61,7 +61,7 @@ construit à partir de la clé \( K \), du nonce \( N \), et de blocs de message
 
 Voici un résumé synthétique des opérations principales :
 
-![Étapes de traitement](./etapes_de_traitement.png)
+![Étapes de traitement](./etapes de traitement.png)
 
 Les principales opérations incluent :
 - Construction de l’état initial via \( IV, K, N \)
