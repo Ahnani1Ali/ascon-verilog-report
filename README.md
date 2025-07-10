@@ -61,7 +61,10 @@ construit à partir de la clé \( K \), du nonce \( N \), et de blocs de message
 
 Voici un résumé synthétique des opérations principales :
 
-![Étapes de traitement](./etapes de traitement.png)
+<p align="center">
+  <img src="etapes de traitement.png" alt="Etapes de traitement" width="650"/>
+  <br><em>Figure — Table 2.2: Algorithme ASCON-AEAD128 — résumé formel des étapes de traitement </em>
+</p>
 
 Les principales opérations incluent :
 - Construction de l’état initial via \( IV, K, N \)
