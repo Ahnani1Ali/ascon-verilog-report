@@ -6,7 +6,7 @@ Le projet repose sur une **approche modulaire en SystemVerilog**, accompagnée d
 
 ---
 
-## 🔐 Présentation de l'algorithme ASCON
+## Présentation de l'algorithme ASCON
 
 ASCON est un algorithme de **chiffrement authentifié avec données associées (AEAD)**, structuré autour d’un **état interne de 320 bits** représenté par 5 registres de 64 bits. Il opère selon un schéma de permutation successives permettant de garantir simultanément :
 
@@ -31,7 +31,7 @@ Chaque phase s’appuie sur des permutations internes notées \( p^a \), \( p^b 
 
 ---
 
-## 🧩 Architecture matérielle
+## Architecture matérielle
 
 L’implémentation est organisée en modules **combinatoires et séquentiels** :
 
@@ -52,8 +52,26 @@ L’implémentation est organisée en modules **combinatoires et séquentiels** 
 </p>
 
 ---
+##  Étapes du chiffrement (ASCON)
 
-## 🧪 Objectifs pédagogiques et techniques
+L’algorithme **ASCON-AEAD** repose sur une permutation cryptographique appliquée en plusieurs phases :  
+**initialisation**, **données associées**, **texte clair** et **finalisation**.  
+Chaque étape exploite une permutation \( p^b \), avec \( b \in \{8, 12\} \), sur un état \( S \in \mathbb{F}_2^{320} \)  
+construit à partir de la clé \( K \), du nonce \( N \), et de blocs de message paddés.
+
+Voici un résumé synthétique des opérations principales :
+
+![Étapes de traitement](./etapes_de_traitement.png)
+
+Les principales opérations incluent :
+- Construction de l’état initial via \( IV, K, N \)
+- XOR avec les blocs de données \( A_i \) et de message \( P_i \)
+- Application des permutations \( p^8 \) ou \( p^{12} \)
+- Génération de la sortie :  
+  chiffrement \( C = \{C_1, C_2, C_3\} \)  
+  et tag d’authentification \( T \in \mathbb{F}_2^{128} \)
+
+## Objectifs pédagogiques et techniques
 
 - Traduire une spécification cryptographique en **structure matérielle hiérarchique**,
 - Appliquer des **opérations booléennes dans \( \mathbb{F}_2^n \)** avec rigueur formelle,
@@ -62,7 +80,7 @@ L’implémentation est organisée en modules **combinatoires et séquentiels** 
 
 ---
 
-## 📝 Rapport complet
+## Rapport complet
 
 📄 [Consulter le rapport technique (PDF)](./Rapport_ASCON_AHNANI_ALI%20(2).pdf)
 
