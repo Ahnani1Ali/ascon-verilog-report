@@ -13,10 +13,9 @@ ASCON est un algorithme de **chiffrement authentifié avec données associées (
 - la **confidentialité** via un chiffrement par blocs,
 - l’**intégrité** via un tag d’authentification.
 
-Formellement, l’état est noté :
-\[
-S = \{S_0, S_1, S_2, S_3, S_4\} \in \mathbb{F}_2^{320}
-\]
+L’état interne S est constitué de 5 registres de 64 bits :
+S = {S₀, S₁, S₂, S₃, S₄} ∈ 𝔽₂³²⁰
+
 
 Les quatre phases principales sont :
 1. **Initialisation** par injection de la clé, du nonce et d’un vecteur IV,
