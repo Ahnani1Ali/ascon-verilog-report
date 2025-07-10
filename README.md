@@ -55,7 +55,7 @@ L’implémentation est organisée en modules **combinatoires et séquentiels** 
 
 L’algorithme **ASCON-AEAD** repose sur une permutation cryptographique appliquée en plusieurs phases :  
 **initialisation**, **données associées**, **texte clair** et **finalisation**.  
-Chaque étape exploite une permutation \( p^b \), avec \( b \in \{8, 12\} \), sur un état \( S \in \mathbb{F}_2^{320} \)  
+Chaque étape exploite une permutation \( p^b \), avec \( b \in \{8, 12\} \), sur un état \(S ∈ 𝔽₂³²⁰)  
 construit à partir de la clé \( K \), du nonce \( N \), et de blocs de message paddés.
 
 Voici un résumé synthétique des opérations principales :
@@ -71,12 +71,12 @@ Les principales opérations incluent :
 - Application des permutations \( p^8 \) ou \( p^{12} \)
 - Génération de la sortie :  
   chiffrement \( C = \{C_1, C_2, C_3\} \)  
-  et tag d’authentification \( T \in \mathbb{F}_2^{128} \)
+  et tag d’authentification \(T ∈ 𝔽₂¹²⁸ )
 
 ## Objectifs pédagogiques et techniques
 
 - Traduire une spécification cryptographique en **structure matérielle hiérarchique**,
-- Appliquer des **opérations booléennes dans \( \mathbb{F}_2^n \)** avec rigueur formelle,
+- Appliquer des **opérations booléennes dans \( 𝔽₂ⁿ)** avec rigueur formelle,
 - Implémenter des **transformations non linéaires et diffusions linéaires** optimisées,
 - Modéliser une **machine de contrôle synchrone** pilotant un pipeline cryptographique.
 
